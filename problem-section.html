@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Section Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Problem Statement Section - Dark Style with Speech Bubbles */
+        .problem-statement {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 6rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .problem-content {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 0;
+            position: relative;
+        }
+        
+        .problem-text {
+            padding-right: 2.5rem;
+        }
+        
+        .problem-text h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .problem-text .subheadline {
+            font-size: 1.25rem;
+            color: #a0a0a0;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+        
+        .problem-list {
+            list-style: none;
+            margin: 0 0 2rem 0;
+            padding: 0;
+        }
+        
+        .problem-list li {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            position: relative;
+            color: #f0f0f0;
+        }
+        
+        .closing-statement {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            line-height: 1.4;
+            color: white;
+        }
+        
+        .speech-bubbles {
+            position: relative;
+            height: 100%;
+            min-height: 600px;
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 10px;
+            padding: 14px 18px;
+            color: white;
+            font-size: 15px;
+            line-height: 1.5;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            max-width: 260px;
+            font-weight: 400;
+            z-index: 1;
+        }
+        
+        .bubble p {
+            margin: 0;
+        }
+        
+        .bubble .avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            bottom: -12px;
+            right: 15px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+        }
+        
+        .bubble .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .bubble.blue {
+            background-color: #4263EB;
+            top: 8%;
+            right: 28%; 
+            max-width: 280px;
+            transform: rotate(-1deg);
+        }
+        
+        .bubble.orange {
+            background-color: #F59E0B;
+            top: 35%;
+            right: 12%;
+            max-width: 260px;
+            transform: rotate(1deg);
+        }
+        
+        .bubble.purple {
+            background-color: #9061F9;
+            top: 58%;
+            right: 30%;
+            max-width: 240px;
+            transform: rotate(1deg);
+        }
+        
+        .bubble.teal {
+            background-color: #0D9488;
+            top: 22%;
+            right: 5%;
+            max-width: 270px;
+            transform: rotate(-1deg);
+        }
+        
+        .bubble.red {
+            background-color: #E11D48;
+            top: 72%;
+            right: 8%;
+            max-width: 250px;
+            transform: rotate(1deg);
+        }
+        
+        .bubble.purple-light {
+            background-color: #8B5CF6;
+            top: 85%;
+            right: 25%;
+            max-width: 230px;
+            transform: rotate(-1deg);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .problem-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .problem-text {
+                padding-right: 0;
+            }
+            
+            .speech-bubbles {
+                height: 700px;
+                margin: 0 auto;
+                max-width: 600px;
+                position: relative;
+            }
+            
+            .bubble.blue {
+                top: 5%;
+                left: 10%;
+                right: auto;
+                max-width: 70%;
+            }
+            
+            .bubble.orange {
+                top: 23%;
+                left: 40%;
+                right: auto;
+                max-width: 70%;
+            }
+            
+            .bubble.purple {
+                top: 41%;
+                left: 5%;
+                right: auto;
+                max-width: 70%;
+            }
+            
+            .bubble.teal {
+                top: 59%;
+                left: 35%;
+                right: auto;
+                max-width: 70%;
+            }
+            
+            .bubble.red {
+                top: 77%;
+                left: 15%;
+                right: auto;
+                max-width: 70%;
+            }
+            
+            .bubble.purple-light {
+                top: 95%;
+                left: 45%;
+                right: auto;
+                max-width: 70%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .problem-statement {
+                padding: 4rem 0;
+            }
+            
+            .speech-bubbles {
+                height: 650px;
+            }
+            
+            .bubble {
+                padding: 12px 15px;
+                font-size: 14px;
+                max-width: 80% !important;
+            }
+            
+            .problem-text h2 {
+                font-size: 1.75rem;
+            }
+            
+            .problem-text .subheadline {
+                font-size: 1.1rem;
+            }
+            
+            .problem-list li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="problem-statement">
+        <div class="container">
+            <div class="problem-content">
+                <div class="problem-text">
+                    <h2>We get it. You're tired of the same monetization playbook.</h2>
+                    <p class="subheadline">But we built Inner Circle anyway, because:</p>
+                    
+                    <ul class="problem-list">
+                        <li>You're exhausted from launching another course that feels pushy.</li>
+                        <li>You want your community to trust you, not see you as just another seller.</li>
+                        <li>You're spending hours answering the same DMs about finding connection.</li>
+                        <li>You know your content helps, but real transformation happens in community.</li>
+                        <li>You're tired of monetizing people's pain points instead of their growth.</li>
+                        <li>You see followers asking to connect with each other, but have no way to facilitate it.</li>
+                        <li>And every new 'community platform' promises engagement but delivers another place for people to scroll alone.</li>
+                    </ul>
+                    
+                    <p class="closing-statement">So we built something different. Let us show you.</p>
+                </div>
+                
+                <div class="speech-bubbles">
+                    <div class="bubble blue">
+                        <p>I love your events but wish I could meet other people from your community too</p>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble orange">
+                        <p>Does anyone here live near me? I'd love to grab coffee</p>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble purple">
+                        <p>I want to connect with others who are at the same stage as me</p>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble teal">
+                        <p>Your content is amazing but I need accountability partners</p>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble red">
+                        <p>I want to help but I can't personally support everyone</p>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble purple-light">
+                        <p>How do I monetize authentically without feeling gross?</p>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="User">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

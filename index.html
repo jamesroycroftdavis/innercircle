@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Circle | Community Building for Mental Health Creators</title>
+    <link rel="stylesheet" href="style.css?v=3.2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .gradient-text {
+            background-image: linear-gradient(90deg, #6366F1, #EC4899) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            text-fill-color: transparent !important;
+            color: transparent !important;
+            display: inline-block !important;
+        }
+        
+        .metric-value {
+            background-image: linear-gradient(90deg, #6366F1, #EC4899) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            text-fill-color: transparent !important;
+            color: transparent !important;
+            display: inline-block !important;
+        }
+        
+        .ticker-number {
+            color: #FF6F61 !important;
+            -webkit-text-fill-color: #FF6F61 !important;
+            text-fill-color: #FF6F61 !important;
+            display: inline-block !important;
+            background-image: none !important;
+        }
+        
+        .cta h2 .gradient-text {
+            background-image: linear-gradient(90deg, white, white) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            text-fill-color: transparent !important;
+            color: transparent !important;
+            display: inline-block !important;
+        }
+        
+        /* Ensure all sections have dark background */
+        body, nav, header, section, footer {
+            background-color: #1a1a1a !important;
+        }
+        
+        /* Critical problem section styles */
+        .problem-statement {
+            background-color: #1a1a1a !important;
+            color: white !important;
+            padding: 6rem 0 !important;
+            overflow: hidden !important;
+            position: relative !important;
+        }
+        
+        .problem-statement .problem-content {
+            display: grid !important;
+            grid-template-columns: 60% 40% !important;
+            gap: 0 !important;
+            position: relative !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 1.5rem !important;
+        }
+        
+        .problem-statement .bubble {
+            position: absolute !important;
+            border-radius: 10px !important;
+            padding: 14px 18px 40px 18px !important;  /* Increased bottom padding */
+            color: white !important;
+            font-size: 15px !important;
+            line-height: 1.5 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+            max-width: 260px !important;
+        }
+        
+        .problem-statement .bubble.blue { background-color: #4263EB !important; top: 8% !important; right: 28% !important; }
+        .problem-statement .bubble.orange { background-color: #F59E0B !important; top: 35% !important; right: 12% !important; }
+        .problem-statement .bubble.purple { background-color: #9061F9 !important; top: 58% !important; right: 30% !important; }
+        .problem-statement .bubble.teal { background-color: #0D9488 !important; top: 22% !important; right: 5% !important; }
+        .problem-statement .bubble.red { background-color: #E11D48 !important; top: 72% !important; right: 8% !important; }
+        .problem-statement .bubble.purple-light { background-color: #8B5CF6 !important; top: 85% !important; right: 25% !important; }
+        
+        .problem-statement .bubble .avatar {
+            width: 28px !important;
+            height: 28px !important;
+            border-radius: 50% !important;
+            overflow: hidden !important;
+            position: absolute !important;
+            bottom: 6px !important;
+            right: 15px !important;
+            border: 2px solid white !important;
+        }
+        
+        .problem-statement .bubble .follower-label {
+            position: absolute !important;
+            bottom: 6px !important;
+            left: 18px !important;
+            font-size: 12px !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500 !important;
+        }
+        
+        .problem-statement .bubble .avatar img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+        
+        .problem-statement .speech-bubbles {
+            position: relative !important;
+            height: 100% !important;
+            min-height: 600px !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="gradient-text">Inner Circle</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i data-feather="message-circle" class="whatsapp-icon"></i>
+                    Chat with us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-constellation">
+                <!-- Floating Faces -->
+                <!-- Top row -->
+                <div class="constellation-face small face-1 delay-1" style="top: 5%; left: 30%;">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face medium face-2 delay-2" style="top: 8%; left: 55%;">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face small face-3 delay-3" style="top: 4%; right: 30%;">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                
+                <!-- Right side -->
+                <div class="constellation-face small face-4 delay-4" style="top: 25%; right: 0%;">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face large face-5 delay-5" style="top: 45%; right: 1%;">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                
+                <!-- Bottom row -->
+                <div class="constellation-face medium face-6 delay-6" style="bottom: 10%; right: 25%;">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face small face-7 delay-7" style="bottom: 5%; left: 48%;">
+                    <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face medium face-8 delay-8" style="bottom: 12%; left: 20%;">
+                    <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                
+                <!-- Left side -->
+                <div class="constellation-face small face-9 delay-9" style="top: 30%; left: 1%;">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face large face-10 delay-10" style="top: 50%; left: 0%;">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face small face-11 delay-11" style="top: 65%; left: 2%;">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                <div class="constellation-face medium face-12 delay-12" style="top: 70%; right: 2%;">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Community member">
+                </div>
+                
+                <!-- Constellation SVG with dotted lines -->
+                <svg class="constellation-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <!-- Top connections -->
+                    <line class="constellation-line" x1="30%" y1="5%" x2="55%" y2="8%"></line>
+                    <line class="constellation-line" x1="55%" y1="8%" x2="70%" y2="4%"></line>
+                    
+                    <!-- Right side connections -->
+                    <line class="constellation-line" x1="70%" y1="4%" x2="100%" y2="25%"></line>
+                    <line class="constellation-line" x1="100%" y1="25%" x2="99%" y2="45%"></line>
+                    <line class="constellation-line" x1="99%" y1="45%" x2="98%" y2="70%"></line>
+                    <line class="constellation-line" x1="98%" y1="70%" x2="75%" y2="90%"></line>
+                    
+                    <!-- Bottom connections -->
+                    <line class="constellation-line" x1="75%" y1="90%" x2="48%" y2="95%"></line>
+                    <line class="constellation-line" x1="48%" y1="95%" x2="20%" y2="88%"></line>
+                    
+                    <!-- Left side connections -->
+                    <line class="constellation-line" x1="20%" y1="88%" x2="2%" y2="65%"></line>
+                    <line class="constellation-line" x1="2%" y1="65%" x2="0%" y2="50%"></line>
+                    <line class="constellation-line" x1="0%" y1="50%" x2="1%" y2="30%"></line>
+                    
+                    <!-- Cross connections -->
+                    <line class="constellation-line" x1="2%" y1="65%" x2="98%" y2="70%"></line>
+                    <line class="constellation-line" x1="30%" y1="5%" x2="1%" y2="30%"></line>
+                </svg>
+            </div>
+            
+            <div class="hero-content-centered">
+                <div class="badge-container">
+                    <span class="badge">For Mental Health & Wellness Creators</span>
+                </div>
+                <h1 style="color: white;">Let AI Build Your Community While You Sleep</h1>
+                <p class="subtitle">Inner Circle Connects your audience members with eachother- both online and offline- creating community networks for you, while letting you monetize them on autopilot</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-coral">
+                        <i data-feather="message-circle" class="whatsapp-icon"></i>
+                        Chat with us
+                    </a>
+                    <a href="#" class="btn btn-green">See How It Helps</a>
+                </div>
+                
+                <div class="social-proof">
+                    <p>Supporting <span>180+ mental health and wellness creators</span> in building meaningful communities where growth and healing happen together.</p>
+                    <div class="creator-avatars">
+                        <div class="avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Creator">
+                        </div>
+                        <div class="avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Creator">
+                        </div>
+                        <div class="avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Creator">
+                        </div>
+                        <div class="avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Creator">
+                        </div>
+                        <div class="avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Creator">
+                        </div>
+                        <div class="avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Creator">
+                        </div>
+                        <div class="avatar-circle more">
+                            <span>+160</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blob"></div>
+        </div>
+    </header>
+
+    <section class="community-stats">
+        <div class="container">
+            <div class="live-ticker-container" data-aos="fade-up">
+                <div class="ticker-accent-border"></div>
+                <div class="ticker-content-wrapper">
+                    <div class="ticker-label">
+                        <i data-feather="users" class="ticker-icon"></i>
+                        <span>Community Members:</span>
+                    </div>
+                    <div class="ticker-number-wrapper">
+                        <div class="ticker-number" id="communityCounter">487,234</div>
+                        <div class="ticker-live-status">
+                            <span class="live-dot"></span>
+                            <span>and growing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-statement">
+        <div class="container">
+            <div class="problem-content">
+                <div class="problem-text">
+                    <h2>We get it. You're tired of the same monetization playbook.</h2>
+                    <p class="subheadline">But we built Inner Circle anyway, because:</p>
+                    
+                    <ul class="problem-list">
+                        <li>You're exhausted from launching another course that feels pushy.</li>
+                        <li>You want your community to trust you, not see you as just another seller.</li>
+                        <li>You're spending hours answering the same DMs about finding connection.</li>
+                        <li>You know your content helps, but real transformation happens in community.</li>
+                        <li>You're tired of monetizing people's pain points instead of their growth.</li>
+                        <li>You see followers asking to connect with each other, but have no way to facilitate it.</li>
+                        <li>And every new 'community platform' promises engagement but delivers another place for people to scroll alone.</li>
+                    </ul>
+                    
+                    <p class="closing-statement">So we built something different. Let us show you.</p>
+                </div>
+                
+                <div class="speech-bubbles">
+                    <div class="bubble blue">
+                        <p>I love your events but wish I could meet other people from your community too</p>
+                        <div class="follower-label">Follower</div>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble orange">
+                        <p>Does anyone here live near me? I'd love to grab coffee</p>
+                        <div class="follower-label">Follower</div>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble purple">
+                        <p>I want to connect with others who are at the same stage as me</p>
+                        <div class="follower-label">Follower</div>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble teal">
+                        <p>Your content is amazing but I need accountability partners</p>
+                        <div class="follower-label">Follower</div>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble red">
+                        <p>I want to help but I can't personally support everyone</p>
+                        <div class="follower-label">Creator</div>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="User">
+                        </div>
+                    </div>
+                    
+                    <div class="bubble purple-light">
+                        <p>How do I monetize authentically without feeling gross?</p>
+                        <div class="follower-label">Creator</div>
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="User">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-text" data-aos="fade-right">
+                    <span class="section-tag">The Solution</span>
+                    <h2>Turn Followers into <span class="gradient-text">Friends</span></h2>
+                    <p>Inner Circle transforms your audience from passive viewers into connected communities. Through AI-powered voice conversations and intelligent matching, your followers finally find the peer support they've been craving—while you build sustainable income from real value.</p>
+                    <div class="solution-cta" style="margin-top: 2rem;">
+                        <a href="#" class="btn btn-primary">
+                            <i data-feather="message-circle" class="whatsapp-icon"></i>
+                            Chat with us
+                        </a>
+                    </div>
+                </div>
+                <div class="solution-image" data-aos="fade-left" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Community connections">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <span class="section-tag">How it Works</span>
+                <h2>We create continuous connections <span class="gradient-text">with your audience</span></h2>
+            </div>
+            
+            <div style="position: relative; max-width: 100%; margin: 3rem 0;" data-aos="fade-up">
+                <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; padding: 1rem 0.5rem 2rem 0.5rem; scrollbar-width: none; -ms-overflow-style: none;" class="workflow-scroll-container">
+                    <div style="flex: 0 0 320px; background-color: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); position: relative; transition: all 0.3s ease; scroll-snap-align: center; min-height: 300px; display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1);" class="workflow-card">
+                        <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #6366F1, #EC4899); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;" class="workflow-card-icon">
+                            <i data-feather="settings" style="color: white; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: white;">Create Your Agent</h3>
+                        <p style="color: #f0f0f0; font-size: 1rem; line-height: 1.6; flex-grow: 1;">Design your AI community builder to match your brand perfectly. Choose your agent's name and customize the personality that will represent you. Your agent becomes an extension of your unique voice and values.</p>
+                        <div style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 1.5rem; font-weight: 700; background-image: linear-gradient(135deg, #6366F1, #EC4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;" class="workflow-step-number">01</div>
+                    </div>
+                    
+                    <div style="flex: 0 0 320px; background-color: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); position: relative; transition: all 0.3s ease; scroll-snap-align: center; min-height: 300px; display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1);" class="workflow-card">
+                        <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #6366F1, #EC4899); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;" class="workflow-card-icon">
+                            <i data-feather="mic" style="color: white; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: white;">Listen Deeply</h3>
+                        <p style="color: #f0f0f0; font-size: 1rem; line-height: 1.6; flex-grow: 1;">Skip the surveys. Inner Circle has natural voice chats with your members, uncovering their real struggles, goals, and what kind of support they need. You get rich insights on everyone—automatically.</p>
+                        <div style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 1.5rem; font-weight: 700; background-image: linear-gradient(135deg, #6366F1, #EC4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;" class="workflow-step-number">02</div>
+                    </div>
+                    
+                    <div style="flex: 0 0 320px; background-color: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); position: relative; transition: all 0.3s ease; scroll-snap-align: center; min-height: 300px; display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1);" class="workflow-card">
+                        <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #6366F1, #EC4899); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;" class="workflow-card-icon">
+                            <i data-feather="users" style="color: white; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: white;">Connect Intelligently</h3>
+                        <p style="color: #f0f0f0; font-size: 1rem; line-height: 1.6; flex-grow: 1;">Our AI matches members based on shared experiences and complementary goals. New moms with anxiety. Insomniacs working on sleep. Fitness beginners seeking accountability. Real connections, not random networking.</p>
+                        <div style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 1.5rem; font-weight: 700; background-image: linear-gradient(135deg, #6366F1, #EC4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;" class="workflow-step-number">03</div>
+                    </div>
+                    
+                    <div style="flex: 0 0 320px; background-color: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); position: relative; transition: all 0.3s ease; scroll-snap-align: center; min-height: 300px; display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1);" class="workflow-card">
+                        <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #6366F1, #EC4899); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;" class="workflow-card-icon">
+                            <i data-feather="coffee" style="color: white; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: white;">Support Everywhere</h3>
+                        <p style="color: #f0f0f0; font-size: 1rem; line-height: 1.6; flex-grow: 1;">Members connect through private video calls and local meetups. Coffee dates, park walks, meditation circles—your community builds lasting friendships both online and in their neighborhoods.</p>
+                        <div style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 1.5rem; font-weight: 700; background-image: linear-gradient(135deg, #6366F1, #EC4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;" class="workflow-step-number">04</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; margin-top: 2rem; gap: 0.75rem;" class="workflow-nav-dots">
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #6366F1; width: 20px; border-radius: 10px; cursor: pointer; transition: all 0.3s ease;" class="nav-dot active"></span>
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.3); cursor: pointer; transition: all 0.3s ease;" class="nav-dot"></span>
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.3); cursor: pointer; transition: all 0.3s ease;" class="nav-dot"></span>
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.3); cursor: pointer; transition: all 0.3s ease;" class="nav-dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="revenue-calculator">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <span class="section-tag">Pricing</span>
+                <h2>Calculate Your <span class="gradient-text">Revenue Potential</span></h2>
+                <p class="section-subtitle">Every community is unique. Let's explore what's possible with Inner Circle.</p>
+            </div>
+            
+            <div class="calculator-container" data-aos="fade-up">
+                <div class="calculator-grid">
+                    <div class="slider-container">
+                        <div class="slider-label">
+                            <span>Inner Circle Community Members</span>
+                            <span class="slider-value" id="memberCount">5,000</span>
+                        </div>
+                        <input type="range" min="100" max="50000" value="5000" class="slider-input" id="memberSlider">
+                        <div class="slider-markers">
+                            <div class="slider-marker">100</div>
+                            <div class="slider-marker">12.5K</div>
+                            <div class="slider-marker">25K</div>
+                            <div class="slider-marker">37.5K</div>
+                            <div class="slider-marker">50K</div>
+                        </div>
+                        
+                        <div class="metrics-row">
+                            <div class="metric-card">
+                                <div class="metric-card-label">Paying Members</div>
+                                <div class="metric-card-value" id="payingMembers">5,000</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-card-label">MRR</div>
+                                <div class="metric-card-value" id="mrrValue">$29,950</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="earnings-display">
+                        <div class="earnings-label">Creator Earnings (70%)</div>
+                        <div class="earnings-value" id="creatorEarnings">$20,965</div>
+                        <p class="earnings-note">Monthly revenue based on $5.99 per member</p>
+                    </div>
+                </div>
+                
+                <div class="calculator-cta">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <i data-feather="message-circle" class="whatsapp-icon"></i>
+                        Let's Chat About Your Community
+                    </a>
+                    <p class="calculator-note">Every community is different. Connect with us to discuss your specific needs and explore custom solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <span class="section-tag">Success Stories</span>
+                <h2>Mental Health & Wellness Creators <span class="gradient-text">Building Stronger Communities</span></h2>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Dr. Lisa Chen">
+                        </div>
+                        <div class="card-meta">
+                            <h4>Dr. Lisa Chen</h4>
+                            <span>Anxiety Specialist, 300K followers</span>
+                        </div>
+                        <div class="quote-mark">"</div>
+                    </div>
+                    <p>My anxiety support community went from isolated individuals to a network of friends supporting each other daily. The local meetups have created genuine friendships, and I finally have sustainable income that feels ethical.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Marcus Williams">
+                        </div>
+                        <div class="card-meta">
+                            <h4>Marcus Williams</h4>
+                            <span>Fitness & Mental Health Coach, 1.5M followers</span>
+                        </div>
+                        <div class="quote-mark">"</div>
+                    </div>
+                    <p>I was struggling to monetize my wellness content without feeling like I was exploiting people's insecurities. Inner Circle changed everything—now I earn $100,000 MRR helping my fitness community find workout buddies and accountability partners.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-header">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Jennifer Santos">
+                        </div>
+                        <div class="card-meta">
+                            <h4>Jennifer Santos</h4>
+                            <span>Mindfulness Educator, 700K followers</span>
+                        </div>
+                        <div class="quote-mark">"</div>
+                    </div>
+                    <p>The connections my community members have formed through Inner Circle have accelerated their growth more than anything I could create alone. My mindfulness students now have local meditation groups in 8 cities!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Ready to build a <span class="gradient-text">thriving community?</span></h2>
+                <p>Join 180+ mental health creators who are connecting their followers and earning sustainable income.</p>
+                <a href="#" class="btn btn-primary btn-large">
+                    <i data-feather="message-circle" class="whatsapp-icon"></i>
+                    Chat with us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="gradient-text">Inner Circle</span>
+                    </div>
+                    <p>Building authentic communities for mental health and wellness creators.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h5>Platform</h5>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Case Studies</a>
+                    </div>
+                    <div class="link-group">
+                        <h5>Company</h5>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                    </div>
+                    <div class="link-group">
+                        <h5>Resources</h5>
+                        <a href="#">Help Center</a>
+                        <a href="#">Community</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Inner Circle. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i data-feather="twitter"></i></a>
+                    <a href="#"><i data-feather="instagram"></i></a>
+                    <a href="#"><i data-feather="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            feather.replace();
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Live ticker functionality
+            const counterElement = document.getElementById('communityCounter');
+            if (counterElement) {
+                let currentCount = 487234; // Starting count
+                
+                // Initial display
+                counterElement.textContent = currentCount.toLocaleString();
+                
+                // Live ticker that updates every 2 seconds
+                setInterval(() => {
+                    // Randomly increment by 1-3
+                    const increment = Math.floor(Math.random() * 3) + 1;
+                    currentCount += increment;
+                    
+                    // Add updating class for animation
+                    counterElement.classList.add('updating');
+                    
+                    // Update the counter with smooth animation
+                    counterElement.textContent = currentCount.toLocaleString();
+                    
+                    // Remove the class after animation completes
+                    setTimeout(() => {
+                        counterElement.classList.remove('updating');
+                    }, 500);
+                }, 2000);
+            }
+            
+            // Constellation animation enhancement
+            const faces = document.querySelectorAll('.constellation-face');
+            
+            // Add random data-speed attributes to faces for varied movement
+            faces.forEach(face => {
+                face.setAttribute('data-speed-x', (Math.random() * 0.5 + 0.1).toFixed(2));
+                face.setAttribute('data-speed-y', (Math.random() * 0.5 + 0.1).toFixed(2));
+            });
+            
+            // Subtle movement on mousemove
+            document.querySelector('.hero').addEventListener('mousemove', function(e) {
+                const moveX = (e.clientX - window.innerWidth / 2) / 50;
+                const moveY = (e.clientY - window.innerHeight / 2) / 50;
+                
+                faces.forEach(face => {
+                    const speedX = parseFloat(face.getAttribute('data-speed-x'));
+                    const speedY = parseFloat(face.getAttribute('data-speed-y'));
+                    
+                    // Don't use transform to avoid conflicting with the float animation
+                    // Instead, use CSS custom properties
+                    face.style.setProperty('--move-x', `${moveX * speedX}px`);
+                    face.style.setProperty('--move-y', `${moveY * speedY}px`);
+                });
+            });
+            
+            // Workflow horizontal scroll functionality
+            const scrollContainer = document.querySelector('.workflow-scroll-container');
+            const navDots = document.querySelectorAll('.workflow-nav-dots .nav-dot');
+            const cards = document.querySelectorAll('.workflow-card');
+            
+            if (scrollContainer && navDots.length > 0 && cards.length > 0) {
+                // Update active nav dot based on scroll position
+                scrollContainer.addEventListener('scroll', () => {
+                    const scrollPosition = scrollContainer.scrollLeft;
+                    const containerWidth = scrollContainer.offsetWidth;
+                    
+                    // Find which card is most visible
+                    let activeIndex = 0;
+                    let maxVisibility = 0;
+                    
+                    cards.forEach((card, index) => {
+                        const cardLeft = card.offsetLeft - scrollContainer.offsetLeft;
+                        const cardRight = cardLeft + card.offsetWidth;
+                        const visibleLeft = Math.max(0, cardLeft);
+                        const visibleRight = Math.min(containerWidth + scrollPosition, cardRight);
+                        const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+                        
+                        if (visibleWidth > maxVisibility) {
+                            maxVisibility = visibleWidth;
+                            activeIndex = index;
+                        }
+                    });
+                    
+                    // Update active nav dot
+                    navDots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === activeIndex);
+                    });
+                });
+                
+                // Click on nav dots to scroll to respective card
+                navDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        const card = cards[index];
+                        const cardLeft = card.offsetLeft - scrollContainer.offsetLeft;
+                        const targetPosition = cardLeft - (scrollContainer.offsetWidth - card.offsetWidth) / 2;
+                        
+                        scrollContainer.scrollTo({
+                            left: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active dot immediately
+                        navDots.forEach((d, i) => {
+                            d.classList.toggle('active', i === index);
+                        });
+                    });
+                });
+                
+                // Simulate initial scroll to activate first card
+                setTimeout(() => {
+                    const firstCard = cards[0];
+                    if (firstCard) {
+                        scrollContainer.scrollTo({
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 500);
+            }
+            
+            // Revenue Calculator Functionality
+            const memberSlider = document.getElementById('memberSlider');
+            const memberCount = document.getElementById('memberCount');
+            const payingMembers = document.getElementById('payingMembers');
+            const mrrValue = document.getElementById('mrrValue');
+            const creatorEarnings = document.getElementById('creatorEarnings');
+            
+            // Set initial values
+            updateCalculator(memberSlider?.value || 5000);
+            
+            // Update on slider change
+            if (memberSlider) {
+                memberSlider.addEventListener('input', function() {
+                    updateCalculator(this.value);
+                });
+            }
+            
+            // Function to update all calculator values with animation
+            function updateCalculator(members) {
+                members = parseInt(members);
+                const subscription = 5.99;
+                const creatorShare = 0.7;
+                
+                // Format the member count with commas
+                const formattedMembers = members.toLocaleString();
+                
+                // Calculate MRR (Monthly Recurring Revenue)
+                const mrr = members * subscription;
+                const formattedMRR = '$' + mrr.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                
+                // Calculate creator earnings
+                const earnings = mrr * creatorShare;
+                const formattedEarnings = '$' + earnings.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                
+                // Animate the changes
+                animateValue(memberCount, formattedMembers);
+                animateValue(payingMembers, formattedMembers);
+                animateValue(mrrValue, formattedMRR);
+                animateValue(creatorEarnings, formattedEarnings);
+            }
+            
+            // Function to animate value changes
+            function animateValue(element, newValue) {
+                if (!element) return;
+                
+                element.classList.add('updating');
+                element.textContent = newValue;
+                
+                setTimeout(() => {
+                    element.classList.remove('updating');
+                }, 300);
+            }
+        });
+    </script>
+</body>
+</html>
