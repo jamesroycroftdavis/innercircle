@@ -1878,7 +1878,7 @@ footer {
 
 @media (max-width: 576px) {
     .problem-statement {
-        padding: 3rem 0 !important;
+        padding: 4rem 0 !important;
     }
     
     .problem-statement .problem-content {
@@ -1887,12 +1887,15 @@ footer {
         flex-direction: column !important;
     }
     
-    /* Mobile-first layout for the problem section */
+    /* Mobile-optimized text content */
     .problem-statement .problem-text {
-        order: 1 !important; /* Ensure text is at the top */
+        order: 1 !important;
         padding: 0 !important;
         width: 100% !important;
         text-align: center !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
     }
     
     /* Hide speech bubbles completely on mobile */
@@ -1901,54 +1904,82 @@ footer {
     }
     
     .problem-statement .problem-text h2 {
-        font-size: 2.2rem !important;
+        font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
         text-align: center !important;
         margin-bottom: 1.5rem !important;
-        line-height: 1.2 !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.01em !important;
+        font-weight: 800 !important;
     }
     
     .problem-statement .problem-text .subheadline {
-        font-size: 1.2rem !important;
-        margin-bottom: 2rem !important;
+        font-size: clamp(1.1rem, 4vw, 1.3rem) !important;
+        margin-bottom: 2.5rem !important;
         text-align: center !important;
+        line-height: 1.5 !important;
+        max-width: 500px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     .problem-statement .problem-list {
-        text-align: left !important;
+        text-align: center !important;
         max-width: 500px !important;
-        margin: 0 auto 2rem auto !important;
+        margin: 0 auto 2.5rem auto !important;
+        padding: 0 1rem !important;
     }
     
     .problem-statement .problem-list li {
-        font-size: 1.1rem !important;
-        margin-bottom: 1.2rem !important;
+        font-size: clamp(1rem, 3.5vw, 1.15rem) !important;
+        margin-bottom: 1.5rem !important;
         padding-left: 0 !important;
+        line-height: 1.5 !important;
     }
     
     .problem-statement .closing-statement {
-        font-size: 1.2rem !important;
-        margin-top: 2rem !important;
+        font-size: clamp(1.1rem, 4vw, 1.25rem) !important;
+        margin-top: 2.5rem !important;
         margin-bottom: 0 !important;
         text-align: center !important;
+        line-height: 1.5 !important;
+        max-width: 500px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-weight: 700 !important;
     }
 }
 
 @media (max-width: 375px) {
-    .problem-statement .bubble {
-        padding: 14px 16px 42px 16px !important;
-        font-size: 14px !important;
+    .problem-statement {
+        padding: 3.5rem 0 !important;
+    }
+    
+    .problem-statement .problem-text {
+        padding: 0 16px !important;
     }
     
     .problem-statement .problem-text h2 {
-        font-size: 1.75rem !important;
+        font-size: 1.8rem !important;
+        margin-bottom: 1.25rem !important;
     }
     
     .problem-statement .problem-text .subheadline {
-        font-size: 1.1rem !important;
+        font-size: 1.05rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .problem-statement .problem-list {
+        padding: 0 !important;
     }
     
     .problem-statement .problem-list li {
         font-size: 1rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    
+    .problem-statement .closing-statement {
+        font-size: 1.1rem !important;
+        margin-top: 2rem !important;
     }
 }
 
