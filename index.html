@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
     <title>Inner Circle | Community Building for Mental Health Creators</title>
-    <link rel="stylesheet" href="style.css?v=3.2">
+    <link rel="stylesheet" href="style.css?v=3.3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -142,8 +146,26 @@
                     Chat with us
                 </a>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+    
+    <div class="mobile-menu">
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Case Studies</a>
+        <a href="#">Blog</a>
+        <a href="#" class="mt-4">
+            <i data-feather="message-circle" class="whatsapp-icon"></i>
+            Chat with us
+        </a>
+    </div>
+    
+    <div class="mobile-menu-overlay"></div>
 
     <header class="hero">
         <div class="container">
@@ -597,12 +619,32 @@
     
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        feather.replace();
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
         document.addEventListener('DOMContentLoaded', function() {
-            feather.replace();
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
+            // Mobile menu functionality
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            
+            function toggleMenu() {
+                mobileMenu.classList.toggle('show');
+                overlay.classList.toggle('show');
+                document.body.classList.toggle('menu-open');
+            }
+            
+            menuToggle.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking on a link
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
             });
             
             // Live ticker functionality
