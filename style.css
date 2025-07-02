@@ -1731,39 +1731,39 @@ footer {
 
 /* Updated bubble styling to match screenshot exactly */
 .problem-statement .bubble {
-    position: absolute !important;
-    border-radius: 10px !important;
-    padding: 14px 18px 40px 18px !important;
-    color: white !important;
-    font-size: 15px !important;
-    line-height: 1.5 !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
-    max-width: 260px !important;
-    font-weight: 400 !important;
-    z-index: 1 !important;
-}
-
-.problem-statement .bubble p {
-    margin: 0 !important;
+    position: absolute;
+    border-radius: 10px;
+    padding: 14px 18px 40px 18px;
+    color: white;
+    font-size: 15px;
+    line-height: 1.5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 260px;
+    font-weight: 400;
+    z-index: 1;
+    word-wrap: break-word;
 }
 
 .problem-statement .bubble .avatar {
-    width: 28px !important;
-    height: 28px !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    bottom: 6px !important;
-    right: 15px !important;
-    border: 2px solid white !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
-    z-index: 2 !important;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 6px;
+    right: 15px;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
-.problem-statement .bubble .avatar img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
+.problem-statement .bubble .follower-label {
+    position: absolute;
+    bottom: 6px;
+    left: 18px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
 }
 
 /* Speech bubble styling */
@@ -1820,81 +1820,58 @@ footer {
     transform: rotate(-1deg) !important;
 }
 
-/* Responsive adjustments */
+/* Updated responsive styles for bubbles */
 @media (max-width: 992px) {
     .problem-statement .problem-content {
-        grid-template-columns: 1fr !important;
-        gap: 4rem !important;
+        grid-template-columns: 1fr;
+        gap: 4rem;
     }
     
     .problem-statement .problem-text {
-        padding-right: 0 !important;
+        padding-right: 0;
     }
     
     .problem-statement .speech-bubbles {
-        height: 700px !important;
-        margin: 0 auto !important;
-        max-width: 600px !important;
-        position: relative !important;
+        height: auto;
+        margin: 0 auto;
+        max-width: 600px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 2rem;
     }
     
-    /* Mobile positions for all bubbles */
-    .problem-statement .bubble.blue {
-        top: 5% !important;
-        left: 10% !important;
+    /* Convert all bubbles to static positioning in a column */
+    .problem-statement .bubble {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
         right: auto !important;
-        max-width: 70% !important;
-    }
-    
-    .problem-statement .bubble.orange {
-        top: 23% !important;
-        left: 40% !important;
-        right: auto !important;
-        max-width: 70% !important;
-    }
-    
-    .problem-statement .bubble.purple {
-        top: 41% !important;
-        left: 5% !important;
-        right: auto !important;
-        max-width: 70% !important;
-    }
-    
-    .problem-statement .bubble.teal {
-        top: 59% !important;
-        left: 35% !important;
-        right: auto !important;
-        max-width: 70% !important;
-    }
-    
-    .problem-statement .bubble.red {
-        top: 77% !important;
-        left: 15% !important;
-        right: auto !important;
-        max-width: 70% !important;
-    }
-    
-    .problem-statement .bubble.purple-light {
-        top: 95% !important;
-        left: 45% !important;
-        right: auto !important;
-        max-width: 70% !important;
+        margin: 0 auto;
+        max-width: 100% !important;
+        width: 90%;
+        transform: none !important;
     }
 }
 
 @media (max-width: 576px) {
     .problem-statement {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
     
     .problem-statement .speech-bubbles {
-        height: 650px;
+        min-height: auto;
+        gap: 16px;
     }
     
     .problem-statement .bubble {
-        padding: 12px 15px;
+        padding: 14px 16px 40px 16px;
         font-size: 14px;
-        max-width: 80% !important;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     }
     
     .problem-statement .problem-text h2 {
@@ -1903,10 +1880,23 @@ footer {
     
     .problem-statement .problem-text .subheadline {
         font-size: 1.1rem;
+        margin-bottom: 1.5rem;
     }
     
     .problem-statement .problem-list li {
         font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Optimize avatar positioning */
+    .problem-statement .bubble .avatar {
+        width: 24px;
+        height: 24px;
+        bottom: 8px;
+    }
+    
+    .problem-statement .bubble .follower-label {
+        font-size: 11px;
     }
 }
 

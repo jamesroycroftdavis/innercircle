@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Problem Section Test</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,7 +94,7 @@
         .bubble {
             position: absolute;
             border-radius: 10px;
-            padding: 14px 18px;
+            padding: 14px 18px 40px 18px; /* Increased bottom padding for avatar */
             color: white;
             font-size: 15px;
             line-height: 1.5;
@@ -102,6 +102,7 @@
             max-width: 260px;
             font-weight: 400;
             z-index: 1;
+            word-wrap: break-word;
         }
         
         .bubble p {
@@ -114,11 +115,20 @@
             border-radius: 50%;
             overflow: hidden;
             position: absolute;
-            bottom: -12px;
+            bottom: 6px;
             right: 15px;
             border: 2px solid white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
             z-index: 2;
+        }
+        
+        .bubble .follower-label {
+            position: absolute;
+            bottom: 6px;
+            left: 18px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
         }
         
         .bubble .avatar img {
@@ -187,68 +197,57 @@
             }
             
             .speech-bubbles {
-                height: 700px;
+                height: auto;
                 margin: 0 auto;
                 max-width: 600px;
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
             }
             
-            .bubble.blue {
-                top: 5%;
-                left: 10%;
+            /* Convert all bubbles to static positioning in a column */
+            .bubble {
+                position: relative;
+                top: auto;
+                left: auto;
                 right: auto;
-                max-width: 70%;
+                margin: 0 auto;
+                max-width: 100% !important;
+                width: 90%;
+                transform: none !important;
             }
             
-            .bubble.orange {
-                top: 23%;
-                left: 40%;
-                right: auto;
-                max-width: 70%;
-            }
-            
-            .bubble.purple {
-                top: 41%;
-                left: 5%;
-                right: auto;
-                max-width: 70%;
-            }
-            
-            .bubble.teal {
-                top: 59%;
-                left: 35%;
-                right: auto;
-                max-width: 70%;
-            }
-            
-            .bubble.red {
-                top: 77%;
-                left: 15%;
-                right: auto;
-                max-width: 70%;
-            }
-            
+            /* Remove individual positioning */
+            .bubble.blue,
+            .bubble.orange,
+            .bubble.purple,
+            .bubble.teal,
+            .bubble.red,
             .bubble.purple-light {
-                top: 95%;
-                left: 45%;
+                position: relative;
+                top: auto;
+                left: auto;
                 right: auto;
-                max-width: 70%;
             }
         }
         
         @media (max-width: 576px) {
             .problem-statement {
-                padding: 4rem 0;
+                padding: 3rem 0;
             }
             
             .speech-bubbles {
-                height: 650px;
+                gap: 16px;
             }
             
             .bubble {
-                padding: 12px 15px;
+                padding: 14px 16px 40px 16px;
                 font-size: 14px;
-                max-width: 80% !important;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
             }
             
             .problem-text h2 {
@@ -257,10 +256,40 @@
             
             .problem-text .subheadline {
                 font-size: 1.1rem;
+                margin-bottom: 1.5rem;
             }
             
             .problem-list li {
                 font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .closing-statement {
+                font-size: 1.1rem;
+                margin-top: 1.5rem;
+            }
+            
+            /* Optimize avatar positioning */
+            .bubble .avatar {
+                width: 24px;
+                height: 24px;
+                bottom: 8px;
+            }
+            
+            .bubble .follower-label {
+                font-size: 11px;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 375px) {
+            .bubble {
+                padding: 12px 14px 36px 14px;
+                font-size: 13px;
+            }
+            
+            .problem-text h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -270,7 +299,7 @@
         <div class="container">
             <div class="problem-content">
                 <div class="problem-text">
-                    <h2>We get it. You're tired of the same monetization playbook.</h2>
+                    <h2>You're tired of the same monetization playbook.</h2>
                     <p class="subheadline">But we built Inner Circle anyway, because:</p>
                     
                     <ul class="problem-list">
@@ -289,6 +318,7 @@
                 <div class="speech-bubbles">
                     <div class="bubble blue">
                         <p>I love your events but wish I could meet other people from your community too</p>
+                        <div class="follower-label">Follower</div>
                         <div class="avatar">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
                         </div>
@@ -296,6 +326,7 @@
                     
                     <div class="bubble orange">
                         <p>Does anyone here live near me? I'd love to grab coffee</p>
+                        <div class="follower-label">Follower</div>
                         <div class="avatar">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
                         </div>
@@ -303,6 +334,7 @@
                     
                     <div class="bubble purple">
                         <p>I want to connect with others who are at the same stage as me</p>
+                        <div class="follower-label">Follower</div>
                         <div class="avatar">
                             <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="User">
                         </div>
@@ -310,6 +342,7 @@
                     
                     <div class="bubble teal">
                         <p>Your content is amazing but I need accountability partners</p>
+                        <div class="follower-label">Follower</div>
                         <div class="avatar">
                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="User">
                         </div>
@@ -317,6 +350,7 @@
                     
                     <div class="bubble red">
                         <p>I want to help but I can't personally support everyone</p>
+                        <div class="follower-label">Creator</div>
                         <div class="avatar">
                             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="User">
                         </div>
@@ -324,6 +358,7 @@
                     
                     <div class="bubble purple-light">
                         <p>How do I monetize authentically without feeling gross?</p>
+                        <div class="follower-label">Creator</div>
                         <div class="avatar">
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="User">
                         </div>
