@@ -1882,7 +1882,9 @@ footer {
     }
     
     .problem-statement .problem-content {
-        gap: 3rem !important;
+        gap: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
     
     /* Mobile-first layout for the problem section */
@@ -1890,34 +1892,31 @@ footer {
         order: 1 !important; /* Ensure text is at the top */
         padding: 0 !important;
         width: 100% !important;
+        text-align: center !important;
     }
     
+    /* Hide speech bubbles completely on mobile */
     .problem-statement .speech-bubbles {
-        order: 2 !important; /* Ensure bubbles are at the bottom */
-        gap: 16px !important;
-        min-height: 0 !important;
-        margin-top: 2rem !important;
-        width: 100% !important;
-    }
-    
-    .problem-statement .bubble {
-        padding: 16px 18px 44px 18px !important;
-        font-size: 15px !important;
-        width: 100% !important;
-        margin-bottom: 16px !important;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
-        border-radius: 16px !important;
+        display: none !important;
     }
     
     .problem-statement .problem-text h2 {
-        font-size: 2rem !important;
-        text-align: left !important;
+        font-size: 2.2rem !important;
+        text-align: center !important;
         margin-bottom: 1.5rem !important;
+        line-height: 1.2 !important;
     }
     
     .problem-statement .problem-text .subheadline {
         font-size: 1.2rem !important;
         margin-bottom: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .problem-statement .problem-list {
+        text-align: left !important;
+        max-width: 500px !important;
+        margin: 0 auto 2rem auto !important;
     }
     
     .problem-statement .problem-list li {
@@ -1930,19 +1929,7 @@ footer {
         font-size: 1.2rem !important;
         margin-top: 2rem !important;
         margin-bottom: 0 !important;
-    }
-    
-    /* Optimize avatar positioning */
-    .problem-statement .bubble .avatar {
-        width: 32px !important;
-        height: 32px !important;
-        bottom: 8px !important;
-        right: 16px !important;
-    }
-    
-    .problem-statement .bubble .follower-label {
-        font-size: 12px !important;
-        bottom: 16px !important;
+        text-align: center !important;
     }
 }
 
