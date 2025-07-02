@@ -189,7 +189,7 @@
         @media (max-width: 992px) {
             .problem-content {
                 grid-template-columns: 1fr;
-                gap: 4rem;
+                gap: 2rem;
             }
             
             .problem-text {
@@ -198,9 +198,8 @@
             
             .speech-bubbles {
                 height: auto;
-                margin: 0 auto;
-                max-width: 600px;
-                position: relative;
+                min-height: 0;
+                position: static;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
@@ -208,13 +207,10 @@
             
             /* Convert all bubbles to static positioning in a column */
             .bubble {
-                position: relative;
-                top: auto;
-                left: auto;
-                right: auto;
+                position: static;
                 margin: 0 auto;
                 max-width: 100% !important;
-                width: 90%;
+                width: 100%;
                 transform: none !important;
             }
             
@@ -225,10 +221,11 @@
             .bubble.teal,
             .bubble.red,
             .bubble.purple-light {
-                position: relative;
+                position: static;
                 top: auto;
                 left: auto;
                 right: auto;
+                margin-bottom: 20px;
             }
         }
         
@@ -237,8 +234,13 @@
                 padding: 3rem 0;
             }
             
+            .problem-content {
+                gap: 2.5rem;
+            }
+            
             .speech-bubbles {
                 gap: 16px;
+                margin-top: 1rem;
             }
             
             .bubble {
@@ -248,10 +250,16 @@
                 margin-left: 0;
                 margin-right: 0;
                 box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+                margin-bottom: 16px;
+            }
+            
+            .bubble:last-child {
+                margin-bottom: 0;
             }
             
             .problem-text h2 {
                 font-size: 1.75rem;
+                text-align: left;
             }
             
             .problem-text .subheadline {

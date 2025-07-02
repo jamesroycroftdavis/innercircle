@@ -1823,80 +1823,100 @@ footer {
 /* Updated responsive styles for bubbles */
 @media (max-width: 992px) {
     .problem-statement .problem-content {
-        grid-template-columns: 1fr;
-        gap: 4rem;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
     }
     
     .problem-statement .problem-text {
-        padding-right: 0;
+        padding-right: 0 !important;
     }
     
     .problem-statement .speech-bubbles {
-        height: auto;
-        margin: 0 auto;
-        max-width: 600px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding-bottom: 2rem;
+        height: auto !important;
+        min-height: 0 !important;
+        position: static !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        margin-top: 1rem !important;
     }
     
     /* Convert all bubbles to static positioning in a column */
     .problem-statement .bubble {
-        position: relative;
+        position: static !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        transform: none !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Remove individual positioning */
+    .problem-statement .bubble.blue,
+    .problem-statement .bubble.orange,
+    .problem-statement .bubble.purple,
+    .problem-statement .bubble.teal,
+    .problem-statement .bubble.red,
+    .problem-statement .bubble.purple-light {
+        position: static !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
-        margin: 0 auto;
-        max-width: 100% !important;
-        width: 90%;
-        transform: none !important;
+    }
+    
+    .problem-statement .bubble:last-child {
+        margin-bottom: 0 !important;
     }
 }
 
 @media (max-width: 576px) {
     .problem-statement {
-        padding: 3rem 0;
+        padding: 3rem 0 !important;
+    }
+    
+    .problem-statement .problem-content {
+        gap: 2.5rem !important;
     }
     
     .problem-statement .speech-bubbles {
-        min-height: auto;
-        gap: 16px;
+        gap: 16px !important;
+        min-height: 0 !important;
     }
     
     .problem-statement .bubble {
-        padding: 14px 16px 40px 16px;
-        font-size: 14px;
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+        padding: 14px 16px 40px 16px !important;
+        font-size: 14px !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
+        margin-bottom: 16px !important;
     }
     
     .problem-statement .problem-text h2 {
-        font-size: 1.75rem;
+        font-size: 1.75rem !important;
+        text-align: left !important;
     }
     
     .problem-statement .problem-text .subheadline {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.1rem !important;
+        margin-bottom: 1.5rem !important;
     }
     
     .problem-statement .problem-list li {
-        font-size: 1rem;
-        margin-bottom: 1rem;
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
     }
     
     /* Optimize avatar positioning */
     .problem-statement .bubble .avatar {
-        width: 24px;
-        height: 24px;
-        bottom: 8px;
+        width: 24px !important;
+        height: 24px !important;
+        bottom: 8px !important;
     }
     
     .problem-statement .bubble .follower-label {
-        font-size: 11px;
+        font-size: 11px !important;
     }
 }
 
