@@ -1823,12 +1823,14 @@ footer {
 /* Updated responsive styles for bubbles */
 @media (max-width: 992px) {
     .problem-statement .problem-content {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3rem !important;
     }
     
     .problem-statement .problem-text {
         padding-right: 0 !important;
+        width: 100% !important;
     }
     
     .problem-statement .speech-bubbles {
@@ -1838,17 +1840,22 @@ footer {
         display: flex !important;
         flex-direction: column !important;
         gap: 20px !important;
-        margin-top: 1rem !important;
+        width: 100% !important;
     }
     
     /* Convert all bubbles to static positioning in a column */
     .problem-statement .bubble {
         position: static !important;
-        margin: 0 auto !important;
+        margin: 0 !important;
         max-width: 100% !important;
         width: 100% !important;
         transform: none !important;
         margin-bottom: 20px !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    .problem-statement .bubble:hover {
+        transform: translateY(-3px) !important;
     }
     
     /* Remove individual positioning */
@@ -1875,48 +1882,86 @@ footer {
     }
     
     .problem-statement .problem-content {
-        gap: 2.5rem !important;
+        gap: 3rem !important;
+    }
+    
+    /* Mobile-first layout for the problem section */
+    .problem-statement .problem-text {
+        order: 1 !important; /* Ensure text is at the top */
+        padding: 0 !important;
+        width: 100% !important;
     }
     
     .problem-statement .speech-bubbles {
+        order: 2 !important; /* Ensure bubbles are at the bottom */
         gap: 16px !important;
         min-height: 0 !important;
+        margin-top: 2rem !important;
+        width: 100% !important;
     }
     
     .problem-statement .bubble {
-        padding: 14px 16px 40px 16px !important;
-        font-size: 14px !important;
+        padding: 16px 18px 44px 18px !important;
+        font-size: 15px !important;
         width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
         margin-bottom: 16px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+        border-radius: 16px !important;
     }
     
     .problem-statement .problem-text h2 {
-        font-size: 1.75rem !important;
+        font-size: 2rem !important;
         text-align: left !important;
-    }
-    
-    .problem-statement .problem-text .subheadline {
-        font-size: 1.1rem !important;
         margin-bottom: 1.5rem !important;
     }
     
+    .problem-statement .problem-text .subheadline {
+        font-size: 1.2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
     .problem-statement .problem-list li {
-        font-size: 1rem !important;
-        margin-bottom: 1rem !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 1.2rem !important;
+        padding-left: 0 !important;
+    }
+    
+    .problem-statement .closing-statement {
+        font-size: 1.2rem !important;
+        margin-top: 2rem !important;
+        margin-bottom: 0 !important;
     }
     
     /* Optimize avatar positioning */
     .problem-statement .bubble .avatar {
-        width: 24px !important;
-        height: 24px !important;
+        width: 32px !important;
+        height: 32px !important;
         bottom: 8px !important;
+        right: 16px !important;
     }
     
     .problem-statement .bubble .follower-label {
-        font-size: 11px !important;
+        font-size: 12px !important;
+        bottom: 16px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .problem-statement .bubble {
+        padding: 14px 16px 42px 16px !important;
+        font-size: 14px !important;
+    }
+    
+    .problem-statement .problem-text h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .problem-statement .problem-text .subheadline {
+        font-size: 1.1rem !important;
+    }
+    
+    .problem-statement .problem-list li {
+        font-size: 1rem !important;
     }
 }
 

@@ -19,6 +19,8 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            background-color: #1a1a1a;
+            color: white;
         }
         
         .container {
@@ -83,6 +85,7 @@
             margin-top: 2.5rem;
             line-height: 1.4;
             color: white;
+            margin-bottom: 1rem;
         }
         
         .speech-bubbles {
@@ -188,12 +191,14 @@
         /* Responsive adjustments */
         @media (max-width: 992px) {
             .problem-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
             }
             
             .problem-text {
                 padding-right: 0;
+                width: 100%;
             }
             
             .speech-bubbles {
@@ -203,15 +208,22 @@
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                width: 100%;
             }
             
             /* Convert all bubbles to static positioning in a column */
             .bubble {
                 position: static;
-                margin: 0 auto;
+                margin: 0;
                 max-width: 100% !important;
                 width: 100%;
                 transform: none !important;
+                margin-bottom: 20px;
+                transition: transform 0.3s ease;
+            }
+            
+            .bubble:hover {
+                transform: translateY(-3px) !important;
             }
             
             /* Remove individual positioning */
@@ -225,7 +237,6 @@
                 top: auto;
                 left: auto;
                 right: auto;
-                margin-bottom: 20px;
             }
         }
         
@@ -235,22 +246,30 @@
             }
             
             .problem-content {
-                gap: 2.5rem;
+                gap: 3rem;
+            }
+            
+            /* Mobile-first layout for the problem section */
+            .problem-text {
+                order: 1; /* Ensure text is at the top */
+                padding: 0;
+                width: 100%;
             }
             
             .speech-bubbles {
+                order: 2; /* Ensure bubbles are at the bottom */
                 gap: 16px;
-                margin-top: 1rem;
+                margin-top: 2rem;
+                width: 100%;
             }
             
             .bubble {
-                padding: 14px 16px 40px 16px;
-                font-size: 14px;
+                padding: 16px 18px 44px 18px;
+                font-size: 15px;
                 width: 100%;
-                margin-left: 0;
-                margin-right: 0;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
                 margin-bottom: 16px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 16px;
             }
             
             .bubble:last-child {
@@ -258,46 +277,59 @@
             }
             
             .problem-text h2 {
-                font-size: 1.75rem;
+                font-size: 2rem;
                 text-align: left;
-            }
-            
-            .problem-text .subheadline {
-                font-size: 1.1rem;
                 margin-bottom: 1.5rem;
             }
             
+            .problem-text .subheadline {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            
             .problem-list li {
-                font-size: 1rem;
-                margin-bottom: 1rem;
+                font-size: 1.1rem;
+                margin-bottom: 1.2rem;
+                padding-left: 0;
             }
             
             .closing-statement {
-                font-size: 1.1rem;
-                margin-top: 1.5rem;
+                font-size: 1.2rem;
+                margin-top: 2rem;
+                margin-bottom: 0;
             }
             
             /* Optimize avatar positioning */
             .bubble .avatar {
-                width: 24px;
-                height: 24px;
+                width: 32px;
+                height: 32px;
                 bottom: 8px;
+                right: 16px;
             }
             
             .bubble .follower-label {
-                font-size: 11px;
+                font-size: 12px;
+                bottom: 16px;
             }
         }
         
         /* Extra small devices */
         @media (max-width: 375px) {
             .bubble {
-                padding: 12px 14px 36px 14px;
-                font-size: 13px;
+                padding: 14px 16px 42px 16px;
+                font-size: 14px;
             }
             
             .problem-text h2 {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
+            }
+            
+            .problem-text .subheadline {
+                font-size: 1.1rem;
+            }
+            
+            .problem-list li {
+                font-size: 1rem;
             }
         }
     </style>
@@ -307,7 +339,7 @@
         <div class="container">
             <div class="problem-content">
                 <div class="problem-text">
-                    <h2>You're tired of the same monetization playbook.</h2>
+                    <h2>We get it. You're tired of the same monetization playbook.</h2>
                     <p class="subheadline">But we built Inner Circle anyway, because:</p>
                     
                     <ul class="problem-list">
